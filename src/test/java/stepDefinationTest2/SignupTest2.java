@@ -1,13 +1,16 @@
 package stepDefinationTest2;
 
+import homePageAction.Test2HomePageAction;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import utilityTest2.BaseClassTest2;
+import utilityTest2.UtilityTest2;
 
 public class SignupTest2 extends BaseClassTest2 {
 	
-
+	Test2HomePageAction test2HomePageAction = new Test2HomePageAction();
+	
 @Given("Launch {string}")
 public void launch(String URL) {
   
@@ -16,8 +19,11 @@ public void launch(String URL) {
 }
 
 @When("user validate home page title and click sign up link")
-public void user_validate_home_page_title_and_click_sign_up_link() {
+public void user_validate_home_page_title_and_click_sign_up_link() throws Exception {
    
+	UtilityTest2.takeMyScreenshot(driver,"Home Pasge title");
+	
+	test2HomePageAction.verifyhomepagetitle();
 	
 }
 
