@@ -11,7 +11,7 @@ import utilityTest2.BaseClassTest2;
 
 @CucumberOptions(features= {"src/test/resource/featureFolderTest2"},
 plugin={"json:target/cucumber.json"},
-glue="stepDefinationTest2", tags= "@SignupTest2"
+glue="stepDefinationTest2", tags= "@SignupTest2 or @LoginTest2"
 		)
 
 public class TestRunnerTest2 extends AbstractTestNGCucumberTests{
