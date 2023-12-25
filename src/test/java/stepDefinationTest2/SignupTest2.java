@@ -1,5 +1,7 @@
 package stepDefinationTest2;
 
+import org.openqa.selenium.Alert;
+
 import homePageAction.Test2HomePageAction;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -25,18 +27,23 @@ public void user_validate_home_page_title_and_click_sign_up_link() throws Except
 	
 	test2HomePageAction.verifyhomepagetitle();
 	
+
 }
 
 @When("enter user name, password and click signupButton")
-public void enter_user_name_password_and_click_signup_button() {
+public void enter_user_name_password_and_click_signup_button() throws Exception {
    
+	test2HomePageAction.enter_username_password_and_click_signupButton(Test2_prop.getProperty("Username"), Test2_prop.getProperty("Password"));
+	
 	
 }
 
 @Then("verify user successfully signed up")
-public void verify_user_successfully_signed_up() {
+public void verify_user_successfully_signed_up() throws Exception {
     
+	test2HomePageAction.verifySignedup();
 	
+	UtilityTest2.takeMyScreenshot(driver, "Signed up");
 }
 
 
